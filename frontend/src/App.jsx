@@ -2,11 +2,13 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import { BrowserRouter } from 'react-router-dom'
-import Main from './main'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Main from './component/Main'
 import Login from './component/Login'
 import Register from './component/Register'
 import Dashboard from './component/Dashboard'
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
   const[data,setData]=useState([]);
