@@ -1,40 +1,56 @@
-const fs= require('fs')
-const fsi= require('fs').promises
+const fs=require('fs')
+const fs1=require('fs').promises
 
 function writeData(){
-    let statusamsg =""; 
+    let statusmsg="";
     try{
-        fs.writeFileSync("studentdata.txt","welcomwe to node module fs")
-        // console.log("data is written sucessfully")
-        statusamsg="Data is writteen sucessfully";
+         fs.writeFileSync("studentdata.txt","Welcome to Node FS Module");
+         //console.log("Data is written successfullly")
+         statusmsg="Data is written successfullly";
     }catch(e){
-        // console.log("Error is:"+e)
-        statusamsg="Error is:" +e;
+        //console.log("Error is:"+e)
+        statusmsg="Error is:"+e;
     }
-
-    return statusamsg;
+    return statusmsg;
 }
+
 
 function readData(){
-    let statusamsg =""
+       let statusmsg="";
     try{
-        const fdata = fs.readFileSync('student.txt',{endcoding:'utf-8'})
-        statusamsg=fdata
+ const fdata=fs.readFileSync('studentdata.txt',{encoding:'utf-8'})
+     statusmsg=fdata
     }catch(e){
-        statusamsg=e;
+        statusmsg=e;
+       
     }
-    return statusamsg
+
+    return statusmsg
 }
+
 
 function deleteData(){
     try{
-        fs.unlinkSync('studentdata.txt')
+             fs.unlinkSync('studentdata.txt')
 
     }catch(e){
 
     }
 }
 
-const obj = {readData , writeData,deleteData}
-// module.exports=writeData;
+async function readFileAsync(){
+     let statusmsg="";
+    try{
+         const data=await fs1.readFile('studentdata.txt',{encoding:'utf-8'})
+            statusmsg=data;
+        }catch(e){
+       console.log(e)
+       statusmsg=e;
+    }
+return statusmsg
+}
+
+
+
+const obj={readData,writeData,deleteData,readFileAsync}
 module.exports=obj;

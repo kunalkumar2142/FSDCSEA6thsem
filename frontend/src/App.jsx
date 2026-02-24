@@ -6,23 +6,23 @@ import './App.css'
 function App() {
   const[data,setData]=useState([]);
   const[loading,setLoading]=useState(false);
-  async function getFetchData(){
-    try{
-     setLoading(true)
-     const serverData=await fetch('http://localhost:4002/data');
-          const jsonData=await serverData.json();
-          setData(jsonData.msg);
-    }catch(e){
-      console.log(e);
-    }
-    finally{
-      setLoading(false);
-    }
-  }
+  // async function getFetchData(){
+  //   try{
+  //    setLoading(true)
+  //    const serverData=await fetch('http://localhost:4002/data');
+  //         const jsonData=await serverData.json();
+  //         setData(jsonData.msg);
+  //   }catch(e){
+  //     console.log(e);
+  //   }
+  //   finally{
+  //     setLoading(false);
+  //   }
+  // }
 
   return (
     <>
-     <h2>Welcome to Node Fetch API</h2> 
+     {/* <h2>Welcome to Node Fetch API</h2>  */}
      {/* {
       data.map((ele)=>(
         <div>
@@ -32,7 +32,7 @@ function App() {
         </div>
       ))
      } */}
-      <div className="products-grid">
+      {/* <div className="products-grid">
       {data.map((ele) => (
       <div key={ele.id} className="product-item">
       <img src={ele.image} height={200} width={200} alt={ele.title} />
@@ -46,10 +46,8 @@ function App() {
       !loading?(<h2>Data is loading....</h2>):(<></>)
      }
 
-
-
      {JSON.stringify(data)}
-     <button onClick={getFetchData}>fetchdata</button>
+     <button onClick={getFetchData}>fetchdata</button> */}
     </>
   )
 }
